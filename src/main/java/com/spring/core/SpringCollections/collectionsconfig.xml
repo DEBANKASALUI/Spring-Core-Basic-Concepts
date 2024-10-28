@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!--This is our Beans -->
+	<bean class="com.spring.core.SpringCollections.Employee"
+		name="employee1">
+
+		<property name="name" value="Harry" />
+
+		<property name="phone">
+			<list>
+				<value>123456</value>
+				<value>987651</value>
+				<value>456677</value>
+				<null />
+			</list>
+		</property>
+
+		<property name="address">
+			<set>
+				<value>Delhi</value>
+				<value>Lucknow</value>
+				<value>Noida</value>
+			</set>
+		</property>
+
+		<property name="courses">
+			<map>
+				<entry key="Java" value="1.5"></entry>
+				<entry key="Python" value="3.5"></entry>
+				<entry key="PHP" value="5.5"></entry>
+				<entry key="GoLang" value="6.5"></entry>
+			</map>
+		</property>
+
+		<property name="property">
+			<props>
+				<prop key="pin1">123455</prop>
+				<prop key="pin2">789900</prop>
+				<prop key="pin3">345666</prop>
+			</props>
+		</property>
+
+	</bean>
+
+</beans>

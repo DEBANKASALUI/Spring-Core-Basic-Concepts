@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<!--This is StandAlone Collections -->
+	<!--StandAlone List -->
+	<util:list list-class="java.util.LinkedList" id="bestFriends">
+		<value>Asad</value>
+		<value>Harry</value>
+		<value>Hagrid</value>
+		<value>Ron</value>
+	</util:list>
+
+	<!--StandAlone Map -->
+	<util:map map-class="java.util.HashMap" id="feestructure">
+		<entry key="Spring" value="5000"></entry>
+		<entry key="JDBC" value="4000"></entry>
+		<entry key="JPA" value="3000"></entry>
+		<entry key="Python" value="3400"></entry>
+	</util:map>
+
+	<!--StandAlone Properties -->
+	<util:properties id="phone">
+		<prop key="phone1">123445</prop>
+		<prop key="phone2">534556</prop>
+		<prop key="phone3">161536</prop>
+	</util:properties>
+
+	<!-- This is Bean definition -->
+	<bean class="com.spring.core.standalone.collections.Person"
+		name="person1">
+
+		<property name="friends" ref="bestFriends" />
+		<!-- <property name="friends"><ref bean="bestFriends" /></property> -->
+		<property name="fees" ref="feestructure" />
+		<property name="properties" ref="phone" />
+
+	</bean>
+
+</beans>

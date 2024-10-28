@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+<context:annotation-config/>
+	<!--This is our Beans -->
+	<bean class="com.spring.core.LifeCycle.Samosa" name="samosa"
+		init-method="init" destroy-method="destroy">
+		<property name="price" value="10.5" />
+	</bean>
+	
+	<bean class="com.spring.core.LifeCycle.Pepsi" name="pepsi">
+		<property name="price" value="60.5" />
+	</bean>
+	<bean class="com.spring.core.LifeCycle.Kurkure" name="kur">
+		<property name="price" value="9.5" />
+	</bean>
+
+</beans>
